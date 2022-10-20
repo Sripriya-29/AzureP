@@ -1,0 +1,31 @@
+<br><div class="rt"><p class="clr"> Back to Enroll Page? <Button (click)="enrollclick()" class="bbutton" >Enroll</Button></p>
+</div>
+<h4>Dependent Information</h4>
+<div class="container" style="align-items: center;" >
+    <div class="container">
+      
+       <form #form="ngForm"(ngSubmit)="OnSubmit()" ><!-- -->
+       
+        <div class="form-group" style="align-items: center;">
+        <th>    <label for="">Name</label> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+          <input type="text" required name="Name"   [(ngModel)]="dependent.Name"></th>
+        </div>
+       
+        <br>
+                                <div class="form-group" style="align-items: center;">
+                                    <th>    <label for="">DOB</label> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <input type="date" name="DOB" [(ngModel)]="dependent.DOB"></th>
+                                    </div><br>
+                                    <div>
+                                        <th>    <label for="">MemberId</label> &nbsp; &nbsp;
+                                            <!-- <input type="text" name="MemberName" {{name}}></th> -->
+                                           <td>{{id}}</td>
+                                    </div><br>
+
+                                                                        <div class="form-group" style="align-items: center;">
+                                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                             <button class="OnSubmit()">Add</button>
+                                    </div>
+       </form>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.topnav {
+    overflow: hidden;
+    background-color:skyblue;
+  height: 50px;
+    
+  }
+  .navheader{
+    text-align: center;
+    color: brown;
+  }
+  .topnav i{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color:brown;
+  }
+  .topnav a.btn{
+    margin-left: 850px;
+    /* padding: 9px 12px; */
+    /* border-radius: 15px;
+    background-color: rgb(89, 61, 248);
+    color: rgb(243, 236, 236);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s; */
+  }
+  .topnav a.active {
+    background-color:rgb(75, 75, 156);
+    color: white;
+  }
+
+
+  /* .toolbar {
+    
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITKTUclmy6ec_rTzGrCk4ovWsCCUxiAtRPQ&usqp=CAU");
+    background-size:cover;
+    height: 900px;
+    width: 100%;
+   
+ } */
+ .topnav a.btn{
+
+  /* background-color:rgb(204, 204, 231); */
+   text-align:right;
+   margin-left: 760px;
+ }
+.nm{
+
+ margin-right: 200px;
+ 
+   text-align:right;
+ }
+
+ /* .topnav label{
+  margin-left: 380px;
+  
+} */
+
+.topnav lable{
+  margin-left: 200px;
+ text-align: right;
+ }
+ 

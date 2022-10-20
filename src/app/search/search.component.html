@@ -1,0 +1,58 @@
+<br><br>
+<div class="banner" style="text-align:center">
+  <h3>
+    Search Members
+  </h3>
+  <div class=" members-container">
+    <div class=" members-form">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+
+
+
+       <div class="form-group">
+          <label for="">Name</label>&nbsp;
+          <input type="text" name="Name" placeholder="Enter Title" [(ngModel)]="member1.name">
+        </div>
+        
+        
+       
+        
+        <br>
+        <div class="form-group">
+          <button (onclick)="onSubmit()">Search</button>
+        
+        <div class="members-grid">
+            <div class="member-row">
+                <div class="member-row-details">
+                    <table class="myTable myTable-zebra myTable-horizontal">
+                        <thead>
+                          <th>Id</th> 
+                            <th>Name</th> 
+                           
+                    </thead>
+                    <tbody *ngFor="let member of members" >
+                        <tr>
+                          <td>{{member.memberId}}</td>
+                            <td>{{ member.name }}</td>
+                            
+                            </tr>
+                        </tbody>
+                    
+                    </table>
+                </div>
+            </div>
+          </div>
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

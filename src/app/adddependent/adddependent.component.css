@@ -1,0 +1,12 @@
+.bbutton {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    /*input has OS specific font-family*/
+    font-family:sans-serif;
+    font-weight:bold;
+    color:indigo;
+    text-decoration: underline;
+    cursor: pointer;
+  }

@@ -1,0 +1,71 @@
+<br>
+
+
+
+<div class="rt"><p class="clr"> Back to Home Page? <Button (click)="enrollclick()" class="bbutton" >Enroll</Button></p>
+   
+
+</div>
+
+
+
+<div class="container" >
+    <div class="container">
+       
+       <form #form="ngForm"(ngSubmit)="onSubmit()" #myForm="ngForm" ><!-- -->
+      
+        <!-- <div class="form-group">
+        <th>    <label for="">MemberId</label> &nbsp; &nbsp;
+          <input type="text" required name="MemberId" [(ngModel)]="claim.MemberId"></th>
+        </div><br> -->
+        <div class="form-group">
+            <th>    <label for="">MemberName</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <!-- <input type="text" name="MemberName" {{name}}></th> -->
+             <td>{{name}}</td>
+            </div><br>
+            <div class="form-group">
+                <th>    <label for="">DOB</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <!-- <input type="date" name="DOB" {{dateofbirth}}></th> -->
+                  <td>{{dateofbirth | date: 'yyyy-MM-dd'}}</td>
+                </div><br>
+                <div class="form-group">
+                    <th  >  <label for="">DateOfAdmission</label> &nbsp; &nbsp;&nbsp;
+                      <input type="date" name="DateOfAdmission" required #udoa="ngModel" [(ngModel)]="claim.DateOfAdmission"></th>
+                    </div>
+                    <div *ngIf="udoa.touched &&udoa.errors?.['required']">
+                      &nbsp; Date of admission  is required .
+                  </div>
+                    <br>
+                    <div class="form-group">
+                        <th >    <label for="">DateOfDischarge</label> &nbsp; &nbsp;&nbsp;
+                          <input type="date" name="DateOfDischarge" required #udod="ngModel" [(ngModel)]="claim.DateOfDischarge"></th>
+                        </div>
+                        <div *ngIf="udod.touched &&udod.errors?.['required']">
+                          &nbsp; Date of discharge  is required .
+                      </div><br>
+                        <div class="form-group">
+                            <th>    <label for="">ProviderName</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="text" name="ProviderName" required #upn="ngModel" [(ngModel)]="claim.ProviderName"></th>
+                            </div>
+                            <div *ngIf="upn.touched &&upn.errors?.['required']">
+                              &nbsp; Provider name is required .
+                          </div><br>
+                            <div class="form-group">
+                              <th>    <label for="">BillAmount</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="BillAmount" required pattern = "^(0|[1-9][0-9]*)$" #uamount="ngModel" [(ngModel)]="claim.BillAmount"></th>
+                              </div>
+                              <div *ngIf="uamount.touched &&uamount.errors?.['required']">
+                                &nbsp;  Bill amount is required .
+                            </div>
+                              <div class="validation" *ngIf="uamount.touched &&uamount.errors?.['pattern']">
+                                  Bill amount should be numeric only .
+                             </div>
+                               <br>
+                                
+                                    <div class="form-group">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="onSubmit()" [disabled]="myForm.form.invalid">Add</button>
+                                    </div>
+       </form>
+    </div>
+</div>

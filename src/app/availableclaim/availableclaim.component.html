@@ -1,0 +1,165 @@
+<br>
+
+<div class="claims-grid">
+    <div class="claim-row">
+        <div class="claim-row-details" *ngIf="claims.length>0"  >
+          <h4>Your Claims</h4>
+            <table class="myTable myTable-zebra myTable-horizontal">
+                <thead>
+                    <th>ClaimId</th>
+                    <th>MemberId</th>
+                    <th>MemberName</th> 
+                    <th>Dob</th>
+                    <th>DateOfAdmission</th>
+                    <th>DateOfDischarge</th>
+                      <th>ProviderName</th>
+                    <th>BillAmount</th>
+                    
+                </thead>
+                <tbody *ngFor="let claim of claims">
+                    <tr>
+                        <td>{{ claim.claimId }}</td>
+                        <td>{{ claim.memberId }}</td>
+                        <td>{{claim.memberName}}</td>
+                        <td>{{claim.dob | date: 'yyyy-MM-dd'}}</td>
+                        <td>{{claim.dateOfAdmission| date: 'yyyy-MM-dd'}}</td>
+                        <td>{{claim.dateOfDischarge| date: 'yyyy-MM-dd'}}</td>
+                        <td>{{claim.providerName}}</td>
+                        <td>{{claim.billAmount}}</td>
+                    </tr>
+                          
+                    
+                </tbody>
+            
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<br><br><br>
+<h4>Member Information</h4>
+<div class="members-grid">
+    <div class="member-row">
+        <div class="member-row-details">
+          <div class="outer-wrapper">
+
+            <div class="table-wrapper">
+           
+            <table class="myTable1 myTable-zebra myTable-horizontal">
+                <thead>
+                   
+                    <th>MemberId</th>
+                    <th>MemberName</th> 
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Email</th>
+                      <th>PAN</th>
+                    <th>ContactNo</th>
+                    <th>DOB</th>
+                    <th> Update Member</th>
+                    <th> Submit Claim</th>
+                </thead>
+                <tbody >
+                    <tr >
+                        <td><input class="comment" name="paragraph_text" ng-readonly="all" [(ngModel)]=" mems1.memberId" /></td>
+                        <td><input class="comment" [readonly]="true" name="paragraph_text" ng-readonly="all" [(ngModel)]="mems1.name" /></td>
+
+                        <td><input class="comment" name="paragraph_text" #uadd="ngModel"  [(ngModel)]="mems1.address" /></td>
+                        <td><input class="comment" name="paragraph_text" #ustate="ngModel"  [(ngModel)]="mems1.state" /></td>
+                        <td><input class="comment" name="paragraph_text" [(ngModel)]="mems1.country" /></td>
+                        <td><input class="comment" name="paragraph_text" #uemail="ngModel" [(ngModel)]="mems1.email" /></td>
+                        <td><input class="comment" name="paragraph_text" #upan="ngModel"  [(ngModel)]="mems1.pan" /></td>
+                        <td><input class="comment" name="paragraph_text" #ucn="ngModel"  [(ngModel)]="mems1.contactNo" /></td>
+                        <td><input class="comment" name="paragraph_text" readonly="true" value="{{mems1.dob | date: 'yyyy-MM-dd'}}" /></td>
+                      <td>
+                        <!-- *ngIf="uadd.touched || ustate.touched ||uemail.touched ||upan.touched ||ucn.touched "  -->
+                            <button class="enjoy-css"  (click)="update(mems1.id,mems1.email,mems1.pan,mems1.state,mems1.address,mems1.contactNo)">UpdateMember</button>
+                          </td>
+                          
+                          <td>
+                            <button class="enjoy-css"  (click)="submitwithname(mems1.name,mems1.dob)">SubmitClaim</button>
+                          </td>
+                </tbody>
+            
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+<div *ngIf = "showDeepBool">
+    <button class="enjoy-css" (click)="showdependent()">Show Dependents</button>
+</div>
+
+<div *ngIf = "addMemBool">
+    <button    class="enjoy-css"  (click)="Add()">Add Dependents</button>
+    
+</div>
+
+
+
+
+
+
+<br><br>
+
+
+<div  class="banner" style="text-align:center"  >
+  
+  <div class=" dependents-container" >
+    <div class=" dependents-form">
+      <form  #form="ngForm" (ngSubmit)="showdependent()" >
+
+        <div class="dependents-grid">
+            <div class="dependent-row">
+                <div class="dependent-row-details" *ngIf="displayList" >
+                    <table class="myTable myTable-zebra myTable-horizontal"  >
+                        <thead >
+                          <th >Id</th> 
+                            <th >Name</th> 
+                            <th  >DOB</th>
+                           
+                            <th >Update Dependent</th>
+                           <th >Submit</th>
+                    </thead>
+                    <tbody  >
+                        <tr *ngFor="let dependent of dependents">
+                          <td>{{dependent.memberId}}</td>
+                            <td>{{ dependent.name }}</td>
+                            <td ><input type="text" id=dob #dob name="dependent.dob" cols="10" rows="2" value = "{{dependent.dob| date: 'yyyy-MM-dd'}}" />
+                            </td>
+                        <td>
+                            <button class="enjoy-css"  (click)="updatedep(dependent.dependentId,dob.value)">Update</button>
+                          </td>
+                      
+                            <td>
+                                <button class="enjoy-css"  (click)="submitwithname(dependent.name,dependent.dob)">SubmitClaim</button>
+                              </td>
+
+                              
+                            </tr>
+                        </tbody>
+                    
+                    </table>
+                    <br>
+                    <div>
+                      <button  [disabled]="dependents.length>=2"  class="enjoy-css"  (click)="Add()">AddDependents</button>
+                      
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- </div> -->
+      </form>
+      <br>
+      
+    </div>
+  </div>
+</div>
+

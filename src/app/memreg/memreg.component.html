@@ -1,0 +1,89 @@
+<div class="container" style="align-items: center;" >
+    <div class="container" >
+        <br>
+       <form #form="ngForm"(ngSubmit)="onSubmit()" #myForm="ngForm"><!-- -->
+        <br>
+        <div class="form-group" style="align-items: center;">
+            <label for="">Name</label> &nbsp; &nbsp; &nbsp; &nbsp;
+         
+
+          <input type="text" required name="Name"  pattern="[a-zA-Z][a-zA-Z ]+" #uname="ngModel" [(ngModel)]="member.name">
+          <span class="required-asterisk">*</span>
+        </div>
+        <!-- <div *ngIf="uname.errors?.['required']">
+           &nbsp; Name is required .
+       </div> -->
+        <div *ngIf="uname.errors?.['pattern']" >
+            Name should not contain  numbers .
+       </div> <br>
+        <div class="form-group" style="align-items: center;">
+            <label for="">Address</label> &nbsp; &nbsp;
+              <input type="text" name="userName" [(ngModel)]="member.address">
+              <span class="required-asterisk">*</span>
+            </div><br>
+            <div class="form-group" style="align-items: center;">
+                 <label for="">Country</label> &nbsp; &nbsp;
+                  <input type="text" name="Country" [(ngModel)]="member.country">
+                  <span class="required-asterisk">*</span>
+                </div><br>
+                <div class="form-group" style="align-items: center;">
+                      <label for="">State</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="text" name="State" [(ngModel)]="member.state">
+                      <span class="required-asterisk">*</span>
+                    </div><br>
+                    <div class="form-group" style="align-items: center;">
+                            <label for="">Email</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #uemail="ngModel" [(ngModel)]="member.email">
+                          <span class="required-asterisk">*</span>
+                        </div>
+                        <div *ngIf="uemail.errors?.['pattern']">
+                            please enter valid email .
+                       </div><br>
+                       <div class="form-group" style="align-items: center;">
+                        <label for="">PAN</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" name="PAN" required pattern ="[A-Z]{5}[0-9]{4}[A-Z]{1}" #upan="ngModel" [(ngModel)]="member.pan">
+                            <span class="required-asterisk">*</span>
+                    </div>
+                    <div *ngIf="upan.errors?.['pattern']">
+                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; enter valid PAN.
+                   </div><br>
+                            <div class="form-group" style="align-items: center;">
+                                 <label for="">Contact</label> &nbsp; &nbsp;
+                                  <input type="text" name="ContactNo" required minlength="10" pattern="^[0-9]*$" maxlength="10"  #ucontact="ngModel" [(ngModel)]="member.contactNo">
+                                  <span class="required-asterisk">*</span>
+                                </div><br>
+                                
+                                <div *ngIf="ucontact.errors?.['minlength'] ">
+                                    ContactNo should be  10  numbers .
+                               </div>
+                               <div *ngIf="ucontact.errors?.['pattern']">
+                                ContactNo should be only numbers .
+                           </div>
+                           <div class="form-group">
+                            <th> <label for="">DOB</label> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                <input type="date" name="DOB" required #udob="ngModel" [(ngModel)]="member.dob"><span class="required-asterisk">*</span>
+                            </th>
+                        </div>
+                        <div *ngIf="udob.errors?.['required']">
+Date field is required
+                        </div>
+                       <div class="validation" *ngIf="udob.touched && isDateEqual(member.dob)">
+                        Age should be greater than 18 years.
+                   </div>
+                                    <br>
+                                    <div class="form-group" style="align-items: center;">
+                                          <label for="">Password</label> &nbsp; 
+                                          <input type="password" name="Password" required #upasswd="ngModel" [(ngModel)]="member.password">
+                                          <span class="required-asterisk">*</span>
+                                        </div>
+                                        <div *ngIf="upasswd.touched &&upasswd.errors?.['required']">
+                                          Password is required
+                                                                  </div>
+                                        <br>
+                                    <div class="form-group" style="align-items: center;">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="onSubmit()" [disabled]="myForm.form.invalid">Add</button>
+                                    </div>
+       </form>
+    </div>
+</div>

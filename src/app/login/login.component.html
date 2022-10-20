@@ -1,0 +1,65 @@
+
+<br>
+<div class = "leftbox">
+ <img style="font-size:30px;"src="https://th.bing.com/th/id/OIP.dnzfjgQtQJhBC71XTkgBPAHaFj?pid=ImgDet&w=800&h=600&rs=1">
+</div> 
+<div class="container" style="align-items: center;" >
+    <div class="container">
+       <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+        <br>
+        <br>
+        <div class="form-group" style="text-align: center;">
+          &nbsp;&nbsp;&nbsp;&nbsp; <label for="">Username </label>&nbsp;&nbsp;
+          <input type="text" name="UserName" [(ngModel)]="member.name">
+           <br><br>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="">Password</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" name="password" [(ngModel)]="member.password">
+          </div>
+          <br>
+         
+        
+        <div class="form-group" style="text-align: center;" >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <button class="btn" (onclick)="onSubmit()">Login </button>
+        </div>
+
+        <div class="rt">
+          <p class="clr"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not a registerd member?<Button (click)="regclick()" class="bbutton" >Register</Button>
+          </p>
+         </div> 
+
+   </form>
+</div>
+</div>
+<br>
+
+<br><br>
+<div>
+  
+  <p class="a">Why claim from Cts?</p>
+<ul class="b">
+  <li > All Covid-19 Treatments covered</li>
+  <li>Instant Purchase, No Medicals Required</li>
+  
+</ul>
+ 
+  
+  
+ </div>
+ <div>
+   
+    <p class="a">Benefits of Health Insurance Health Coverage</p>
+    
+    Health Insurance plans have enhanced offerings to cover a wide spectrum of requirements, like a family health plan offers complete cover to all members of a family under a single umbrella.
+    <ul class="b">
+      <li > Medical Bills: Coverage against medicinal expenses incurred, including pre and post hospitalization</li>
+   <li>Pre-existing Diseases: Coverage for any pre-existing disease is provided to you after a certain waiting period.</li>
+  <li> Claim Reimbursement: Coverage for expenses incurred for hospitalization due to a medical</li>
+  </ul>
+    
+    
+   
+    
+  
+ </div>

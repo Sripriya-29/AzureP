@@ -1,0 +1,46 @@
+.rt{
+    text-align: center;
+}
+.btn{
+    background-color: skyblue;
+    border:none;
+}
+p.a {
+    font:  small-caps bold 12px/30px Georgia, serif;
+  }
+  ul.b{
+   color: darkcyan;
+  
+  }
+  .clr{
+      color:blueviolet;
+  }
+  #leftbox {
+    float:left; 
+   
+    width:5%;
+    height:50px;
+}
+.leftbox{
+    max-width: 100%;  
+height: auto;  
+size-adjust: 10px;
+font-size-adjust: 1px;
+    font-size:20px;
+    float: left;
+    
+
+}
+
+.bbutton {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    /*input has OS specific font-family*/
+    font-family:sans-serif;
+    font-weight:bold;
+    color:indigo;
+    text-decoration: underline;
+    cursor: pointer;
+  }
